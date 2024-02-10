@@ -1,0 +1,28 @@
+<div class="frame-line-rectangle">
+	<img
+		class="clarityclose-line-icon"
+		loading="eager"
+		alt=""
+		src="./public/claritycloseline.svg" />
+
+	<div class="frame-header">
+		<div class="frame-header-child"></div>
+		<div class="frame-subheader">
+			<div class="frame-content"></div>
+			<input class="text-large" placeholder="MENU" type="text" />
+		</div>
+		<div class="text-small">
+			<mat-nav-list>
+				<mat-list-item
+					*ngFor="let item of menu$ | keyvalue; trackBy: trackByFn"
+					[routerLink]="item.value.link"
+					routerLinkActive="active">
+					<mat-icon style="width: 30px; height: 19px" mat-list-icon>{{
+						item.value.icon
+					}}</mat-icon>
+					<a matLine>{{ item.value.name }}</a>
+				</mat-list-item>
+			</mat-nav-list>
+		</div>
+	</div>
+</div>

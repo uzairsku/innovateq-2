@@ -1,0 +1,52 @@
+<header class="frame-rectangle-frame">
+	<div class="frame-rectangle-frame-child"></div>
+	<div class="lorem-epsum-frames">
+		<a href=""><h3>LOREM|PSUM</h3></a>
+	</div>
+	<div class="close-frame">
+		<div class="arrow-right-alt-frame">
+			<img
+				class="create-request-frame"
+				alt=""
+				src="./public/create-request-frame.svg" />
+
+			<input class="raise-frame" type="text" />
+		</div>
+	</div>
+	<div class="recommended-frame">
+		<div class="analyze-data-frame">
+			<div
+				class="create-arrows-frame"
+				style="cursor: pointer"
+				(click)="togglePopup()">
+				<img
+					class="notifications-none-24px-1-icon"
+					loading="eager"
+					alt=""
+					src="../../assets/images/notifications-none24px-1.svg" />
+
+				<div class="frame-recommended-frame">
+					<div class="frame-recommended-frame-child"></div>
+					<div class="union-close-frame" *ngIf="notificationCount > 0">
+						{{ notificationCount }}
+					</div>
+				</div>
+			</div>
+			<div class="popup" *ngIf="showPopup">
+				<h3 style="color: black">
+					You have {{ notificationCount }} new notifications!
+				</h3>
+			</div>
+		</div>
+		<div
+			style="cursor: pointer"
+			class="frame-union-frame"
+			(click)="toggleUserInfo()">
+			<b class="ap">{{ this.username }}</b>
+			<div class="frame-icon"></div>
+		</div>
+		<div class="popup" *ngIf="showUserInfo">
+			<h3 style="color: black">Current user is {{ userData$[0].name }} !</h3>
+		</div>
+	</div>
+</header>

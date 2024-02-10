@@ -1,0 +1,49 @@
+<app-page-toolbar
+	name="Blogs"
+	Description="Total user : 50"
+	icon="article"></app-page-toolbar>
+<div class="frameloremipsum">
+	<div class="read-moreframes">
+		<div class="read-moreframes3">
+			<ng-container
+				*ngFor="let group of blogPosts$ | chunk: 2; trackBy: trackByFn">
+				<div class="group-container">
+					<div class="rectangle-container" *ngFor="let blog of group">
+						<div class="frame-inner"></div>
+						<img
+							class="oil-gas-rigs-vector-illustrati-icon2"
+							loading="eager"
+							alt=""
+							src="../../../assets/images/query-builder24px-3-4.png" />
+
+						<div class="lorem-ipsum-dolor-parent">
+							<h1 class="lorem-ipsum-dolor4">{{ blog.title }}</h1>
+							<div class="lorem-ipsum-dolor5">
+								{{ blog.content }}
+								<a style="color: blue">Read More</a>
+							</div>
+							<div class="read-more-parent">
+								<div class="frame-parent">
+									<div class="query-builder-24px-3-4-parent">
+										<mat-icon
+											style="height: 27px !important; width: 30px !important"
+											>schedule</mat-icon
+										>
+										<div class="july-20202">{{ blog.date }}</div>
+									</div>
+									<div class="query-builder-24px-3-4-parent">
+										<mat-icon
+											style="height: 28px !important; width: 28px !important"
+											>account_circle</mat-icon
+										>
+										<div class="alex-paul2">{{ blog.author }}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+	</div>
+</div>

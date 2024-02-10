@@ -1,0 +1,32 @@
+<app-page-toolbar
+	name="Users"
+	Description="Total user : {{ totalUserCount }}"
+	icon="person"></app-page-toolbar>
+<div class="frame-frame">
+	<div
+		class="frame-raise-request-wrapper"
+		*ngFor="let userData of userData$ | keyvalue; trackBy: trackByFn">
+		<div class="frame-raise-request">
+			<div class="frame-raise-request-child"></div>
+			<div class="frame-rectangle">
+				<h2 class="lorem-epsum6">{{ userData.value.name }}</h2>
+			</div>
+			<div class="consectetur-adipiscing7">
+				{{ userData.value.description }}
+			</div>
+			<div class="lorem-epsum-boxes">
+				<div class="consectetur-adipiscing-frames">
+					<div class="nested-data-analysis"></div>
+					<img
+						alt=""
+						[src]="userData.value.imageUrl1"
+						class="parent-recommendation-frame" />
+					<img
+						alt=""
+						[src]="userData.value.imageUrl2"
+						class="consectetur-adipiscing-frames-child" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

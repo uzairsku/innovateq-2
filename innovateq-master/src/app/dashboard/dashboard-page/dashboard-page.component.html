@@ -1,0 +1,88 @@
+<app-page-toolbar
+	name="Home"
+	Description="Home Page Description"
+	icon="home"></app-page-toolbar>
+<div class="group-finance">
+	<div class="frame-shopping-cart-and-balanc">
+		<div class="frame-shopping-cart-and-balanc-child"></div>
+		<mat-icon style="color: #47a1f6; height: 50px; width: 50px; font-size: 47px"
+			>shopping_cart</mat-icon
+		>
+
+		<div class="exit-icon">
+			<div class="chart-component">
+				<h1 class="recommended-analysis-group">{{ totalOrders$ }}</h1>
+				<h3 class="total-orders">Total Orders</h3>
+			</div>
+		</div>
+	</div>
+	<div class="frame-shopping-cart-and-balanc1">
+		<div class="frame-shopping-cart-and-balanc-item"></div>
+		<mat-icon style="color: #47a1f6; height: 50px; width: 50px; font-size: 47px"
+			>monetization_on</mat-icon
+		>
+
+		<div class="frame-shopping-cart-and-balanc-inner">
+			<div class="parent">
+				<h1 class="recommended-analysis-group">{{ totalExpenses$.count }}</h1>
+				<h3 class="total-expenses">Total Expenses</h3>
+			</div>
+		</div>
+	</div>
+	<div class="frame-shopping-cart-and-balanc2">
+		<div class="rectangle-div"></div>
+		<mat-icon style="color: #47a1f6; height: 50px; width: 50px; font-size: 47px"
+			>attach_money</mat-icon
+		>
+
+		<div class="frame-div">
+			<div class="group">
+				<h1 class="recommended-analysis-group">{{ totalRevenue$.count }}</h1>
+				<h3 class="total-revenue">Total Revenue</h3>
+			</div>
+		</div>
+	</div>
+	<div class="frame-shopping-cart-and-balanc3">
+		<div class="frame-shopping-cart-and-balanc-child1"></div>
+		<mat-icon style="color: #47a1f6; height: 50px; width: 50px; font-size: 47px"
+			>person</mat-icon
+		>
+
+		<div class="frame-shopping-cart-and-balanc-inner1">
+			<div class="container">
+				<h1 class="recommended-analysis-group">{{ totalNewUsers$.count }}</h1>
+				<h3 class="new-users">New Users</h3>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="raise-request-frame">
+	<div class="raise-request-frame-child"></div>
+	<div class="union-shape">
+		<div class="recommended-analysis">
+			<div class="create-arrow-group">
+				<mat-icon style="height: 28px; font-size: 20px">article</mat-icon>
+
+				<b class="recent-blogs">Recent Blogs</b>
+			</div>
+		</div>
+		<div class="vertical-line-separator"></div>
+	</div>
+	<div class="total-orders-frame">
+		<div
+			*ngFor="let blog of blogs$ | keyvalue; trackBy: trackByFn"
+			class="home-page-description2">
+			<img
+				[src]="blog.value.imageUrl"
+				class="home-page-description-item"
+				loading="eager"
+				alt="" />
+			<div class="lorem-ipsum-dolor-sit-amet-group">
+				<h3 class="lorem-ipsum-dolor">{{ blog.value.title }}</h3>
+				<div class="lorem-ipsum-dolor3">
+					{{ blog.value.content }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
