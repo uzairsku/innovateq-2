@@ -22,7 +22,9 @@ export class UsersPageComponent extends BaseComponent implements OnInit {
 	}
 
 	getUserData(database: string): void {
-		this.userDataSubscription = this.getPageData(database).subscribe(users => {
+		this.userDataSubscription = this.getPageDataFromJSONServer(
+			database
+		).subscribe(users => {
 			this.userData$ = users;
 			this.totalUserCount = users.length;
 		});

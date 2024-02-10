@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ConfigService {
 	config = '';
+	jsonServerUrl = 'https://my-json-server.typicode.com/uzairsku/InnovateqApi2';
 
 	constructor(private http: HttpClient) {}
 
@@ -25,6 +26,13 @@ export class ConfigService {
 
 	getSettings(apiName: string, id?: number): Observable<any> {
 		const url = id ? `api/${apiName}/${id}` : `api/${apiName}`;
+		return this.http.get<any>(url).pipe(catchError(this.handleError('', [])));
+	}
+
+	getDataFromJsonServer(apiName: string, id?: number): Observable<any> {
+		const url = id
+			? `${this.jsonServerUrl}/${apiName}/${id}`
+			: `${this.jsonServerUrl}/${apiName}/`;
 		return this.http.get<any>(url).pipe(catchError(this.handleError('', [])));
 	}
 }

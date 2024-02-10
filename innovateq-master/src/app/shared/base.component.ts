@@ -23,6 +23,10 @@ export class BaseComponent implements OnInit, OnDestroy {
 		return this.config.getSettings(apiName, id);
 	}
 
+	protected getPageDataFromJSONServer(apiName: string, id?: number): any {
+		return this.config.getDataFromJsonServer(apiName, id);
+	}
+
 	protected trackByFn(index: number, item: any): any {
 		return item.key;
 	}
